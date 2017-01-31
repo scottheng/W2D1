@@ -4,6 +4,7 @@ class Board
     attr_reader :grid
     def initialize()
       @grid = Array.new(8) { Array.new(8) }
+
       create_board
 
     end
@@ -25,9 +26,9 @@ class Board
         col = 0
         while col < @grid.length
           if [0,1,6,7].include?(row)
-            self[[row,col]] = "a" #Piece.new()
+            self[[row,col]] = Piece.new("j")
           else
-            self[[row,col]] = nil
+            self[[row,col]] = Piece.new("nil")
           end
           col += 1
         end
