@@ -9,8 +9,8 @@ class Board
     end
 
     def move_piece(start_pos, end_pos)
-      raise "No piece in start position" unless valid_move?(start_pos)
-      raise "End position not valid" unless valid_move?(end_pos)
+      raise "No piece in start position" unless in_bounds(start_pos)
+      raise "End position not valid" unless in_bounds(end_pos)
 
       current_piece = self[start_pos]
       other_piece = self[end_pos]
@@ -36,7 +36,7 @@ class Board
 
     end
 
-    def valid_move?(pos)
+    def in_bounds(pos)
       x, y = pos
       return false if x < 0 || x > 7
       return false if y < 0 || y > 7
