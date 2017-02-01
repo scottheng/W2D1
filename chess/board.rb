@@ -26,9 +26,9 @@ class Board
         col = 0
         while col < @grid.length
           if [0,1,6,7].include?(row)
-            self[[row,col]] = Piece.new("j")
+            self[[row,col]] = Piece.new("j", [row, col], @grid)
           else
-            self[[row,col]] = Piece.new("nil")
+            self[[row,col]] = Piece.new("n", [row, col], @grid)
           end
           col += 1
         end

@@ -1,5 +1,6 @@
 require_relative "board.rb"
 require_relative "cursor.rb"
+require_relative "queen.rb"
 require "colorize"
 
 class Display
@@ -18,15 +19,17 @@ class Display
       rows_str = ""
       j = 0
       while j < @board.grid.length
+        piece = @board.grid[i][j]
+
         if [i,j] == @cursor.cursor_pos
           unless @cursor.selected
             #### Using Name but will change to actual piece
-            board_element = @board.grid[i][j].name.colorize(:color => :red) ## when selected == false
+            board_element = piece.name.colorize(:color => :red) ## when selected == false
           else
-            board_element = @board.grid[i][j].name.colorize(:color => :green) ## seleceted == true
+            board_element = piece.name.colorize(:color => :green) ## seleceted == true
           end
         else
-          board_element = @board.grid[i][j].name
+          board_element = piece.name
         end
         rows_str += "#{board_element} | "
         j += 1
@@ -49,4 +52,7 @@ end
 b = Board.new()
 d = Display.new(b)
 
+
+b[[1,1]]= Queen.new("Q", [1,1], b)
+#b[[1,1]].moves
 d.test

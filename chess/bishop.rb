@@ -1,7 +1,7 @@
 require_relative "piece.rb"
 require_relative "sliding_piece_module.rb"
 
-class Queen < Piece
+class Bishop < Piece
   include SlidingPiece
 
   def initialize(name, position, board)
@@ -9,7 +9,7 @@ class Queen < Piece
   end
 
   def move_dirs
-    [[1, 0], [-1,0], [0,1], [0,-1], [1, 1], [1, -1], [-1, 1], [-1, -1]]
+    [[1, 1], [1, -1], [-1, 1], [-1, -1]]
   end
 
 
