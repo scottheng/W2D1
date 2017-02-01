@@ -1,23 +1,16 @@
-module SlidingPiece
+module SteppingPiece
 
   def moves #Returns array of all possible moves
     possible_moves = []
 
     move_dirs.each do |delta|
       current_position = self.position
-      condition = true
+      first = current_position.first + delta.first
+      last =  current_position.last + delta.last
+      current_position = [first, last]
 
-      while condition
-        first = current_position.first + delta.first
-        last =  current_position.last + delta.last
-        current_position = [first, last]
-
-        if in_bounds?(current_position) && is_valid?(current_position)
-          possible_moves << current_position
-        else
-          condition = false
-        end
-
+      if in_bounds?(current_position) && is_valid?(current_position)
+        possible_moves << current_position
       end
     end
     p possible_moves

@@ -1,6 +1,6 @@
 require_relative "board.rb"
 require_relative "cursor.rb"
-require_relative "queen.rb"
+require_relative "king.rb"
 require "colorize"
 
 class Display
@@ -53,6 +53,6 @@ b = Board.new()
 d = Display.new(b)
 
 
-b[[1,1]]= Queen.new("Q", [1,1], b)
-#b[[1,1]].moves
-d.test
+b[[1,1]]= King.new("K", [1,1], b)
+b[[1,1]].moves
+# d.test
