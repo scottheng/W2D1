@@ -1,7 +1,7 @@
-require_relative "piece.rb"
+require_relative "../piece.rb"
 require_relative "stepping_piece_module.rb"
 
-class Knight < Piece
+class King < Piece
   include SteppingPiece
 
   def initialize(name, position, board)
@@ -9,7 +9,7 @@ class Knight < Piece
   end
 
   def move_dirs
-    [[-2, 1], [-2, -1], [2, 1], [2, -1], [1, -2], [1, 2], [-1, -2], [-1, 2]]
+    [[1, 0], [-1,0], [0,1], [0,-1], [1, 1], [1, -1], [-1, 1], [-1, -1]]
   end
 
 

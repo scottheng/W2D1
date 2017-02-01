@@ -54,5 +54,5 @@ d = Display.new(b)
 
 
 b[[1,1]]= King.new("K", [1,1], b)
-b[[1,1]].moves
-# d.test
+# b[[1,1]].moves
+d.test

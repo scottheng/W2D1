@@ -1,4 +1,4 @@
-require_relative "piece.rb"
+require_relative "../piece.rb"
 require_relative "sliding_piece_module.rb"
 
 class Rook < Piece

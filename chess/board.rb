@@ -1,4 +1,5 @@
 require_relative "piece.rb"
+require_relative "null.rb"
 
 class Board
     attr_reader :grid
@@ -28,7 +29,7 @@ class Board
           if [0,1,6,7].include?(row)
             self[[row,col]] = Piece.new("j", [row, col], @grid)
           else
-            self[[row,col]] = Piece.new("n", [row, col], @grid)
+            self[[row,col]] = Null.instance
           end
           col += 1
         end

@@ -16,4 +16,8 @@ class Piece
     # Array of all posiible moves  , check the board and map out the possible moves from there.
   end
 
+  def null?
+    false
+  end
+
 end
